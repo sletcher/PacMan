@@ -6,26 +6,49 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-public class DecisionTree {
-    public Integer distance;
-    public DecisionTreeNode[] nodes;
+import pacman.game.Game;
 
-    public DecisionTree(String fileName) {
-        parseFile(fileName);
+public class DecisionTree implements IDecisionTreeNode,IDecisionTree {
+
+    private IDecisionTreeNode trueBranch;
+    private IDecisionTreeNode falseBranch;
+    private ICondition condition;
+
+
+
+    @Override
+    public void setTrueBranch(IDecisionTreeNode node) {
+        trueBranch = node;
     }
 
-    public void parseFile(String fileName) {
-        try {
-            BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("data/AI" + System.getProperty("file.separator") + fileName)));
-            String input = br.readLine();
+    @Override
+    public IDecisionTreeNode getTrueBranch() {
+        return trueBranch;
+    }
 
-            //preamble
-            String[] pr = input.split("\t");
+    @Override
+    public void setFalseBranch(IDecisionTreeNode node) {
+        falseBranch = node;
+    }
 
-            distance = Integer.parseInt(pr[0]);
-        } catch(IOException ioe) {
-            ioe.printStackTrace();
+    @Override
+    public IDecisionTreeNode getFalseBranch() {
+        return falseBranch;
+    }
+
+    @Override
+    public void setCondition(ICondition condition) {
+        this.condition = condition;
+    }
+
+    @Override
+    public IAction makeDecision(Game game) {
+
+        if (condition.test(game)) {
+
+            return trueBranch.makeDecision(game);
         }
+        else
+            return falseBranch.makeDecision(game);
     }
-
 }
