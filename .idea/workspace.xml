@@ -2,22 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="db78b631-85f3-47eb-9733-2acad93b5fd6" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/pacman/game/internal/conditions/EdibleGhostWithin.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/pacman/game/internal/conditions/InedibleGhostWithin.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/pacman/game/internal/DecisionTree.java" afterPath="$PROJECT_DIR$/src/pacman/game/internal/DecisionTreeNode.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/joseatovar-Ms-Pacman-vs-Ghost-7b5557f (2)/pacman/Executor.class" afterPath="$PROJECT_DIR$/out/production/joseatovar-Ms-Pacman-vs-Ghost-7b5557f (2)/pacman/Executor.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/joseatovar-Ms-Pacman-vs-Ghost-7b5557f (2)/pacman/game/Constants.class" afterPath="$PROJECT_DIR$/out/production/joseatovar-Ms-Pacman-vs-Ghost-7b5557f (2)/pacman/game/Constants.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/joseatovar-Ms-Pacman-vs-Ghost-7b5557f (2)/pacman/game/Game.class" afterPath="$PROJECT_DIR$/out/production/joseatovar-Ms-Pacman-vs-Ghost-7b5557f (2)/pacman/game/Game.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pacman/Executor.java" afterPath="$PROJECT_DIR$/src/pacman/Executor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pacman/controllers/DTPacMan.java" afterPath="$PROJECT_DIR$/src/pacman/controllers/DTPacMan.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pacman/game/Constants.java" afterPath="$PROJECT_DIR$/src/pacman/game/Constants.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pacman/game/internal/IAction.java" afterPath="$PROJECT_DIR$/src/pacman/game/internal/IAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pacman/game/internal/actions/ChaseGhost.java" afterPath="$PROJECT_DIR$/src/pacman/game/internal/actions/ChaseGhost.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pacman/game/internal/actions/FleeGhosts.java" afterPath="$PROJECT_DIR$/src/pacman/game/internal/actions/FleeGhosts.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pacman/game/internal/actions/GoNearestPill.java" afterPath="$PROJECT_DIR$/src/pacman/game/internal/actions/GoNearestPill.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pacman/game/internal/actions/GoNearestPowerPill.java" afterPath="$PROJECT_DIR$/src/pacman/game/internal/actions/GoNearestPowerPill.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pacman/game/internal/actions/ReduceThreat.java" afterPath="$PROJECT_DIR$/src/pacman/game/internal/actions/ReduceThreat.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pacman/game/internal/conditions/AverageEdibleTime.java" afterPath="$PROJECT_DIR$/src/pacman/game/internal/conditions/AverageEdibleTime.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pacman/game/internal/conditions/GhostDistanceToPacman.java" afterPath="$PROJECT_DIR$/src/pacman/game/internal/conditions/GhostDistanceToPacman.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pacman/game/internal/conditions/ShortestPathIsSafe.java" afterPath="$PROJECT_DIR$/src/pacman/game/internal/conditions/ShortestPathIsSafe.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -49,11 +37,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Executor.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Executor.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pacman/Executor.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="549">
               <caret line="68" column="62" selection-start-line="68" selection-start-column="62" selection-end-line="68" selection-end-column="62" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RAPPacMan.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/pacman/controllers/RAPPacMan.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="231">
+              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -75,18 +73,6 @@
             <state relative-caret-position="556">
               <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ChaseGhost.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pacman/game/internal/actions/ChaseGhost.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="33">
-              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -742,7 +728,14 @@
       <option name="project" value="LOCAL" />
       <updated>1489457152785</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="DT Working. Average score about 8700">
+      <created>1489526297517</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1489526297517</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -750,7 +743,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-16" y="-16" width="3232" height="1732" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -760,11 +753,11 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32555038" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32955304" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32955304" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2675" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2675" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32955304" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -800,7 +793,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Bill test push" />
     <MESSAGE value="Sams edits to DT 10pm 3/13" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sams edits to DT 10pm 3/13" />
+    <MESSAGE value="DT Working. Average score about 8700" />
+    <option name="LAST_COMMIT_MESSAGE" value="DT Working. Average score about 8700" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -965,13 +959,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pacman/controllers/RAPPacMan.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1184,6 +1171,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="549">
           <caret line="68" column="62" selection-start-line="68" selection-start-column="62" selection-end-line="68" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pacman/controllers/RAPPacMan.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
       </provider>
