@@ -10,7 +10,5 @@ public interface IAction {
     CHASE, FLEE, PILL, POWERPILL, REDUCE
   }
 
-  public void doAction();
-
   public MOVE getMove(Game game);
 }

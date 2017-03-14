@@ -2,18 +2,14 @@ package pacman.game.internal.conditions;
 
 import pacman.game.Constants;
 import pacman.game.Game;
-import pacman.game.internal.IAction;
+import pacman.game.internal.DecisionTreeNode;
 import pacman.game.internal.ICondition;
-import pacman.game.internal.IDecisionTreeNode;
 
-public class ShortestPathIsSafe implements ICondition, IDecisionTreeNode {
+public class ShortestPathIsSafe extends DecisionTreeNode implements ICondition {
 
   private int nodeIndex;
   private boolean toNearestPowerPill;
 
-  public ShortestPathIsSafe(int nodeIndex) {
-    this.nodeIndex = nodeIndex;
-  }
 
   public ShortestPathIsSafe() {
     this.toNearestPowerPill = true;
@@ -51,10 +47,5 @@ public class ShortestPathIsSafe implements ICondition, IDecisionTreeNode {
         return false;
     }
     return true;
-  }
-
-  @Override
-  public IAction makeDecision(Game game) {
-    return null;
   }
 }

@@ -2,10 +2,10 @@ package pacman.game.internal.actions;
 
 import pacman.game.Constants;
 import pacman.game.Game;
+import pacman.game.internal.DecisionTreeNode;
 import pacman.game.internal.IAction;
-import pacman.game.internal.IDecisionTreeNode;
 
-public class ReduceThreat implements IAction, IDecisionTreeNode {
+public class ReduceThreat extends DecisionTreeNode implements IAction {
 
   private float[] threatMap;
 
@@ -13,10 +13,6 @@ public class ReduceThreat implements IAction, IDecisionTreeNode {
     this.threatMap = threatMap;
   }
 
-  @Override
-  public void doAction() {
-
-  }
 
   @Override
   public Constants.MOVE getMove(Game game) {

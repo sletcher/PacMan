@@ -4,19 +4,15 @@ import java.util.ArrayList;
 
 import pacman.game.Constants;
 import pacman.game.Game;
+import pacman.game.internal.DecisionTreeNode;
 import pacman.game.internal.IAction;
-import pacman.game.internal.IDecisionTreeNode;
 
 /**
  * Created by Bill on 3/13/2017.
  */
-public class GoNearestPowerPill implements IAction, IDecisionTreeNode {
+public class GoNearestPowerPill extends DecisionTreeNode implements IAction {
 
 
-  @Override
-  public void doAction() {
-
-  }
 
   private int _findNearestPill(Game game, int current, boolean includeNormalPills,
                                boolean includePowerPills) {

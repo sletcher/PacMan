@@ -2,11 +2,10 @@ package pacman.game.internal.actions;
 
 import pacman.game.Constants;
 import pacman.game.Game;
-import pacman.game.GameView;
+import pacman.game.internal.DecisionTreeNode;
 import pacman.game.internal.IAction;
-import pacman.game.internal.IDecisionTreeNode;
 
-public class ChaseGhost implements IAction, IDecisionTreeNode {
+public class ChaseGhost extends DecisionTreeNode implements IAction  {
 
   Constants.GHOST ghost;
   boolean closest = false;
@@ -20,10 +19,6 @@ public class ChaseGhost implements IAction, IDecisionTreeNode {
     closest = true;
   }
 
-  @Override
-  public void doAction() {
-
-  }
 
   @Override
   public Constants.MOVE getMove(Game game) {

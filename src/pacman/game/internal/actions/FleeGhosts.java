@@ -2,18 +2,14 @@ package pacman.game.internal.actions;
 
 import pacman.game.Constants;
 import pacman.game.Game;
+import pacman.game.internal.DecisionTreeNode;
 import pacman.game.internal.IAction;
-import pacman.game.internal.IDecisionTreeNode;
 
 /**
  * Created by Bill on 3/13/2017.
  */
-public class FleeGhosts implements IAction, IDecisionTreeNode {
+public class FleeGhosts extends DecisionTreeNode implements IAction {
 
-  @Override
-  public void doAction() {
-
-  }
 
   @Override
   public Constants.MOVE getMove(Game game) {

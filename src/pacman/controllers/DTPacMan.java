@@ -4,14 +4,15 @@ import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
 
 import pacman.game.Constants;
 import pacman.game.Game;
-import pacman.game.internal.DecisionTree;
+import pacman.game.internal.DecisionTreeNode;
 import pacman.game.internal.IAction;
-import pacman.game.internal.ICondition;
-import pacman.game.internal.IDecisionTreeNode;
+import pacman.game.internal.actions.ChaseGhost;
+import pacman.game.internal.actions.FleeGhosts;
+import pacman.game.internal.actions.GoNearestPill;
+import pacman.game.internal.actions.GoNearestPowerPill;
 import pacman.game.internal.conditions.AverageEdibleTime;
 import pacman.game.internal.conditions.GhostDistanceToPacman;
 import pacman.game.internal.conditions.InedibleGhostWithin;
@@ -20,8 +21,9 @@ import pacman.game.internal.conditions.ShortestPathIsSafe;
 
 public class DTPacMan extends Controller {
 
-    private DecisionTree[] decisionTree;
-    private DecisionTree startNode;
+    private DecisionTreeNode[] decisionTreeNode;
+    private DecisionTreeNode startNode;
+
 
 
 
@@ -35,10 +37,10 @@ public class DTPacMan extends Controller {
 
     public Constants.MOVE getMove(Game game, long timeDue) {
 
-        IAction action = startNode.makeDecision(game);
+        IAction action = decisionTreeNode[0].makeDecision(game);
         Constants.MOVE move = action.getMove(game);
 
-        return Constants.MOVE.DOWN;
+        return move;
     }
 
     public void parseFile(String fileName) {
@@ -51,10 +53,10 @@ public class DTPacMan extends Controller {
             String[] pr = input.split("\t");
 
             int nodes = Integer.parseInt(pr[0]);
-            decisionTree = new DecisionTree[nodes];
+            decisionTreeNode = new DecisionTreeNode[nodes];
 
             for (int i=0; i < nodes; i++) {
-                decisionTree[i] = new DecisionTree();
+                decisionTreeNode[i] = new DecisionTreeNode();
             }
 
             input = br.readLine();
@@ -63,9 +65,14 @@ public class DTPacMan extends Controller {
             {
                 String[] nd=input.split("\t");
 
-                decisionTree[i].setCondition(newCondition(Integer.parseInt(nd[1])));
-                decisionTree[i].setTrueBranch(decisionTree[Integer.parseInt(nd[2])]);
-                decisionTree[i].setFalseBranch(decisionTree[Integer.parseInt(nd[3])]);
+                decisionTreeNode[i] = newCondition(Integer.parseInt(nd[1]), Integer.parseInt(nd[4]),
+                        Integer.parseInt(nd[5]));
+                //Set true node
+                decisionTreeNode[i].setTrueNode(Integer.parseInt(nd[2]));
+                //Set false node
+                decisionTreeNode[i].setFalseNode(Integer.parseInt(nd[3]));
+
+
 
                 input=br.readLine();
                 i++;
@@ -74,13 +81,40 @@ public class DTPacMan extends Controller {
         } catch(IOException ioe) {
             ioe.printStackTrace();
         }
+
+        for (int i =0; i < decisionTreeNode.length; i++) {
+
+            if (decisionTreeNode[i].getTrueNode() < 0 || decisionTreeNode[i].getTrueNode() > decisionTreeNode.length) {
+                decisionTreeNode[i].setTrueBranch(null);
+            }
+            else {
+                decisionTreeNode[i].setTrueBranch(decisionTreeNode[decisionTreeNode[i].getTrueNode()]);
+            }
+
+            if (decisionTreeNode[i].getFalseNode() < 0 || decisionTreeNode[i].getFalseNode() > decisionTreeNode.length) {
+                decisionTreeNode[i].setFalseBranch(null);
+            }
+            else {
+                decisionTreeNode[i].setFalseBranch(decisionTreeNode[decisionTreeNode[i].getFalseNode()]);
+            }
+        }
     }
 
-    public ICondition newCondition(Integer distance) {
-        switch (distance) {
-            case 0: return new InedibleGhostWithin(distance);
-            case 1: return new EdibleGhostWithin(distance);
-            default: return null;
+
+    public DecisionTreeNode newCondition(Integer n, Integer var1, Integer var2) {
+        switch (n) {
+            case 0: return new InedibleGhostWithin(var1);
+            case 1: return new AverageEdibleTime(var1, var2);
+            case 2: return new GhostDistanceToPacman(var1, var2);
+            case 3: return new ShortestPathIsSafe();
+
+            case 10: return new ChaseGhost();
+            case 11: return new FleeGhosts();
+            case 12: return new GoNearestPill();
+            case 13: return new GoNearestPowerPill();
+            //case 14: return new ReduceThreat();
+
+            default: return new GoNearestPill();
         }
     }
 

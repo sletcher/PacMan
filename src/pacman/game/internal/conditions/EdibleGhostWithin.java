@@ -5,29 +5,29 @@ import pacman.game.Game;
 import pacman.game.internal.DecisionTreeNode;
 import pacman.game.internal.ICondition;
 
-public class GhostDistanceToPacman extends DecisionTreeNode implements ICondition {
+/**
+ * Created by Bill on 3/14/2017.
+ */
+public class EdibleGhostWithin extends DecisionTreeNode implements ICondition {
 
-  private final int min;
-  private final int max;
+  private final int distance;
 
-  public GhostDistanceToPacman(Integer min, Integer max) {
-    this.min = min;
-    this.max = max;
+  public EdibleGhostWithin(Integer dist) {
+    this.distance = dist;
   }
 
   @Override
   public boolean test(Game game) {
 
-    int pacPosition = game.getPacmanCurrentNodeIndex();
     for (Constants.GHOST ghostType : Constants.GHOST.values()) {
 
       int ghostLoaction = game.getGhostCurrentNodeIndex(ghostType);
-      int distToPac = game.getShortestPathDistance(ghostLoaction, pacPosition);
-      if (distToPac >= min && distToPac < max) {
+      int distToPac = game.getShortestPathDistance(ghostLoaction,
+              game.getPacmanCurrentNodeIndex());
+      if (distToPac <= distance && game.getGhostEdibleTime(ghostType) > 0) {
         return true;
       }
     }
     return false;
   }
-
 }
