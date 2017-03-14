@@ -6,9 +6,6 @@ import pacman.game.internal.IAction;
 import pacman.game.internal.ICondition;
 import pacman.game.internal.IDecisionTreeNode;
 
-/**
- * Created by Bill on 3/13/2017.
- */
 public class GhostDistanceToPacman implements ICondition, IDecisionTreeNode {
 
   private int min = 0;

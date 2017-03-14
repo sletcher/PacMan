@@ -14,8 +14,6 @@ public class DecisionTree implements IDecisionTreeNode,IDecisionTree {
     private IDecisionTreeNode falseBranch;
     private ICondition condition;
 
-
-
     @Override
     public void setTrueBranch(IDecisionTreeNode node) {
         trueBranch = node;
@@ -45,7 +43,6 @@ public class DecisionTree implements IDecisionTreeNode,IDecisionTree {
     public IAction makeDecision(Game game) {
 
         if (condition.test(game)) {
-
             return trueBranch.makeDecision(game);
         }
         else

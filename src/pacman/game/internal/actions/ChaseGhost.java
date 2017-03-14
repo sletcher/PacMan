@@ -6,9 +6,6 @@ import pacman.game.GameView;
 import pacman.game.internal.IAction;
 import pacman.game.internal.IDecisionTreeNode;
 
-/**
- * Created by Bill on 3/13/2017.
- */
 public class ChaseGhost implements IAction, IDecisionTreeNode {
 
   Constants.GHOST ghost;

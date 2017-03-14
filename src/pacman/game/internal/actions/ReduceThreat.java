@@ -5,9 +5,6 @@ import pacman.game.Game;
 import pacman.game.internal.IAction;
 import pacman.game.internal.IDecisionTreeNode;
 
-/**
- * Created by Bill on 3/13/2017.
- */
 public class ReduceThreat implements IAction, IDecisionTreeNode {
 
   private float[] threatMap;
