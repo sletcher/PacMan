@@ -25,8 +25,6 @@ public class DTPacMan extends Controller {
     private DecisionTreeNode startNode;
 
 
-
-
     public DTPacMan() {
         loadTree();
     }

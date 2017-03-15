@@ -66,7 +66,7 @@ public class Executor
 //		exec.runGameTimed(new NearestPillPacMan(),new AggressiveGhosts(),visual);
 		//exec.runGameTimed(new StarterPacMan(),new StarterGhosts(),visual);
 		//exec.runGameTimed(new DTPacMan(),new StarterGhosts(),visual);
-		exec.runExperiment(new DTPacMan(), new StarterGhosts(), 10);
+		exec.runExperimentEachMap(new DTPacMan(), new StarterGhosts(), 200);
 //		exec.runGameTimed(new HumanController(new KeyBoardInput()),new StarterGhosts(),visual);	
 		//*/
 		
@@ -115,7 +115,6 @@ public class Executor
 			}
 			
 			avgScore+=game.getScore();
-			System.out.println(i+"\t"+game.getScore());
 		}
 		
 		System.out.println(avgScore/trials);
@@ -392,5 +391,41 @@ public class Executor
         }
         
         return replay;
+	}
+	public void runExperimentEachMap(Controller<MOVE> pacManController,Controller<EnumMap<GHOST,
+			MOVE>> ghostController, int trials)
+	{
+		double avgScore=0;
+		double minScore=Double.MAX_VALUE;
+		double maxScore=0;
+
+		Random rnd=new Random(0);
+		Game game;
+
+		for(int j=0;j<4;j++)
+		{
+			for(int i=0;i<trials;i++) {
+				game=new Game(rnd.nextLong(), j);
+
+				while(!game.gameOver())
+				{
+					game.advanceGame(pacManController.getMove(game.copy(),System.currentTimeMillis()+DELAY),
+							ghostController.getMove(game.copy(),System.currentTimeMillis()+DELAY));
+				}
+
+				avgScore+=game.getScore();
+				if(game.getScore() < minScore) {
+					minScore = game.getScore();
+				}
+				if(game.getScore() > maxScore) {
+					maxScore = game.getScore();
+				}
+				System.out.println(i+" Maze: " + j + "\t"+game.getScore());
+			}
+		}
+
+		System.out.println("AVERAGE: " + avgScore/(trials*4) +
+				"  MIN: " + minScore +
+				"  MAX: " + maxScore);
 	}
 }

@@ -55,6 +55,10 @@ public class GoNearestPowerPill extends DecisionTreeNode implements IAction {
     int pacmanPosition = game.getPacmanCurrentNodeIndex();
     int nearestPillPosition = findNearestAnyPill(game, pacmanPosition);
 
+    if (nearestPillPosition < 0) {
+      nearestPillPosition = 0;
+    }
+
     return game.getNextMoveTowardsTarget(pacmanPosition, nearestPillPosition, Constants.DM.PATH);
   }
 
