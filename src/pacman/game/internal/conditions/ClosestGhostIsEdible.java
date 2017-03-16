@@ -5,22 +5,13 @@ import pacman.game.Game;
 import pacman.game.internal.DecisionTreeNode;
 import pacman.game.internal.ICondition;
 
-public class AverageEdibleTime extends DecisionTreeNode implements ICondition {
+public class ClosestGhostIsEdible extends DecisionTreeNode implements ICondition {
 
-  private final int min;
-  private final int max;
-
-  public AverageEdibleTime(Integer min, Integer max) {
-    this.min = min;
-    this.max = max;
+  public ClosestGhostIsEdible(Integer min, Integer max) {
   }
 
   @Override
   public boolean test(Game game) {
-
-    float minTime = 9999;
-    float maxTime = -999;
-    float total = 0;
     int dist = 9999;
     Constants.GHOST closest = null;
 

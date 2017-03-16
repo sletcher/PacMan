@@ -43,7 +43,7 @@ public class EvadeGhostsRap implements IRap {
     }
 
     @Override
-    public Object[] handleRap(Game game) {
-        return taskNet;
+    public boolean handleRap(Game game) {
+
     }
 }

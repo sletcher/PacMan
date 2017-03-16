@@ -1265,6 +1265,9 @@ public final class Game
 	 */
 	public int getShortestPathDistance(int fromNodeIndex,int toNodeIndex)
 	{
+		if (((fromNodeIndex*(fromNodeIndex+1))/2)+toNodeIndex >= currentMaze.shortestPathDistances.length || ((fromNodeIndex*(fromNodeIndex+1))/2)+toNodeIndex < 0) {
+			return 0;
+		}
 		if(fromNodeIndex==toNodeIndex)
 			return 0;		
 		else if(fromNodeIndex<toNodeIndex)

@@ -17,7 +17,7 @@ public class GoNearestPowerPill extends DecisionTreeNode implements IAction {
   private int _findNearestPill(Game game, int current, boolean includeNormalPills,
                                boolean includePowerPills) {
 
-    ArrayList<Integer> targets = new ArrayList<Integer>();
+    ArrayList<Integer> targets = new ArrayList<>();
 
     if (includeNormalPills) {
       int[] pills = game.getActivePillsIndices();

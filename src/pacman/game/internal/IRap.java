@@ -29,6 +29,7 @@ public interface IRap {
     /**
      * Executes the RAPs primitive RAPs (associated actions)
      * @param game game
+     * @return designates whether or not the RAP is returning an action
      */
-    Object[] handleRap(Game game);
+    boolean handleRap(Game game);
 }

@@ -2,13 +2,13 @@ package pacman.game.internal;
 
 public interface IDecisionTree {
 
-  public void setTrueBranch(IDecisionTreeNode node);
+  public void setTrueBranch(IBaseNode node);
 
-  public IDecisionTreeNode getTrueBranch();
+  public IBaseNode getTrueBranch();
 
-  public void setFalseBranch(IDecisionTreeNode node);
+  public void setFalseBranch(IBaseNode node);
 
-  public IDecisionTreeNode getFalseBranch();
+  public IBaseNode getFalseBranch();
 
   public void setCondition(ICondition condition);
 }

@@ -13,7 +13,7 @@ import pacman.game.internal.actions.ChaseGhost;
 import pacman.game.internal.actions.FleeGhosts;
 import pacman.game.internal.actions.GoNearestPill;
 import pacman.game.internal.actions.GoNearestPowerPill;
-import pacman.game.internal.conditions.AverageEdibleTime;
+import pacman.game.internal.conditions.ClosestGhostIsEdible;
 import pacman.game.internal.conditions.GhostDistanceToPacman;
 import pacman.game.internal.conditions.InedibleGhostWithin;
 import pacman.game.internal.conditions.ShortestPathIsSafe;
@@ -102,7 +102,7 @@ public class DTPacMan extends Controller {
     public DecisionTreeNode newCondition(Integer n, Integer var1, Integer var2) {
         switch (n) {
             case 0: return new InedibleGhostWithin(var1);
-            case 1: return new AverageEdibleTime(var1, var2);
+            case 1: return new ClosestGhostIsEdible(var1, var2);
             case 2: return new GhostDistanceToPacman(var1, var2);
             case 3: return new ShortestPathIsSafe();
 

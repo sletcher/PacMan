@@ -1,17 +1,11 @@
 package pacman.game.internal;
 
-import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-
 import pacman.game.Game;
 
-public class DecisionTreeNode implements IDecisionTreeNode,IDecisionTree {
+public class DecisionTreeNode implements IBaseNode,IDecisionTree {
 
-    private IDecisionTreeNode trueBranch;
-    private IDecisionTreeNode falseBranch;
+    private IBaseNode trueBranch;
+    private IBaseNode falseBranch;
     private ICondition condition;
     private int trueNode;
     private int falseNode;
@@ -27,22 +21,22 @@ public class DecisionTreeNode implements IDecisionTreeNode,IDecisionTree {
     public boolean test(Game game) {return false;}
 
     @Override
-    public void setTrueBranch(IDecisionTreeNode node) {
+    public void setTrueBranch(IBaseNode node) {
         trueBranch = node;
     }
 
     @Override
-    public IDecisionTreeNode getTrueBranch() {
+    public IBaseNode getTrueBranch() {
         return trueBranch;
     }
 
     @Override
-    public void setFalseBranch(IDecisionTreeNode node) {
+    public void setFalseBranch(IBaseNode node) {
         falseBranch = node;
     }
 
     @Override
-    public IDecisionTreeNode getFalseBranch() {
+    public IBaseNode getFalseBranch() {
         return falseBranch;
     }
 

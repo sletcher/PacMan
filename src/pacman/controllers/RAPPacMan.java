@@ -13,14 +13,13 @@ import java.io.InputStreamReader;
 import java.util.LinkedList;
 
 public class RAPPacMan extends Controller {
-  LinkedList<IRap> raps = new LinkedList<>();
+  public static LinkedList<Object> RAPS = new LinkedList<>();
 
   RAPPacMan() {
     parseFile("rap.txt");
   }
 
   public void parseFile(String fileName) {
-
     try {
       BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("data/ai" + System.getProperty("file.separator") + fileName)));
       String input = br.readLine();

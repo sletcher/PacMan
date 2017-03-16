@@ -12,7 +12,7 @@ public class ShortestPathIsSafe extends DecisionTreeNode implements ICondition {
 
 
   public ShortestPathIsSafe() {
-    this.toNearestPowerPill = true;
+    this.toNearestPowerPill = false;
   }
 
   @Override
@@ -36,15 +36,12 @@ public class ShortestPathIsSafe extends DecisionTreeNode implements ICondition {
     int[] path = game.getShortestPath(pacIndex, nodeIndex);
 
     for (int i = 0; i < path.length; i++) {
-      boolean isSafe = true;
       for (Constants.GHOST ghostType : Constants.GHOST.values()) {
         int ghostPos = game.getGhostCurrentNodeIndex(ghostType);
         int d = game.getShortestPathDistance(ghostPos, path[i]);
         if (d < i)
-          isSafe = false;
+          return false;
       }
-      if (!isSafe)
-        return false;
     }
     return true;
   }
