@@ -29,6 +29,8 @@ public class DTPacMan extends Controller {
         loadTree();
     }
 
+    public DTPacMan(String fileName) { parseFile(fileName);}
+
     private void loadTree() {
         parseFile("dt.txt");
     }
@@ -40,6 +42,8 @@ public class DTPacMan extends Controller {
 
         return move;
     }
+
+    public DecisionTreeNode[] getDecisionTreeNode() {return decisionTreeNode;}
 
     public void parseFile(String fileName) {
 
