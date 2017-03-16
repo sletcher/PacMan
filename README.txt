@@ -30,3 +30,29 @@ C/A #	Function Name		Var 1		Var 2
 11	FleeGhosts		N/A		N/A
 12	GoNearestPill		N/A		N/A
 13	GoNearestPowerPill	N/A		N/A
+
+
+RAP PacMan:
+
+How to use it: To use the RAP pacman simply subsitute DTPacman, or StarterPacman from the Executor class.
+    In order for our RAP Pacman to work correctly you must include a correctly formatted rap.txt file.
+
+How it works: RAP pacman uses a series of decision sets in order to determine where pacman should go.
+    Each decision has a set of goals and conditions which determine whether or not it's acted upon.
+    The first test is to see whether or not that conditions goal has been met. If the goal is met that
+    RAP will be removed from the queue, as it is no longer necessary (its completed its job). Next, if the
+    goal is not met, the RAP's conditions are checked to see if it the game is in a state where it would
+    be necessary to execute this particular RAP's action. If those conditions are met, the action is acted on
+    There are two types of actions included in our implementation. One is to add a RAP's task net to the stack,
+    in effect adding more RAPs with their own sets of conditions and goals to meet. The other is executing a move
+    action. If a RAP's conditions are met and it has an action, it will act on that action and reset the queue.
+
+Text File Format: Our text file is formatted in such a way as to be as readable as possible.
+
+                    index | name | goals | conditions | tasknet | action
+
+Notes:  Though RAPs are very potent and can certainly be powerful tools for making more engaging AI, their
+    efficacy in an environment like PacMan is dubious at best. This is because RAPs are most useful when there
+    is a complex system, and numerous actions to keep track of. In PacMan, the pacman character may only take
+    one action at a time, and that action is entirely mutually exclusive of all others. Further, once an
+    action is taken the best course is to entirely reset the RAPs queue.

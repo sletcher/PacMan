@@ -5,5 +5,9 @@ import pacman.game.Game;
 
 
 public interface IAction {
+  enum ACTION {
+    CHASE, FLEE, PILL, PPILL
+  }
+
   MOVE getMove(Game game);
 }

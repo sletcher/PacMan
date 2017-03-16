@@ -66,7 +66,8 @@ public class Executor
 //		exec.runGameTimed(new NearestPillPacMan(),new AggressiveGhosts(),visual);
 		//exec.runGameTimed(new StarterPacMan(),new StarterGhosts(),visual);
 		//exec.runGameTimed(new DTPacMan(),new StarterGhosts(),visual);
-		exec.runExperimentEachMap(new DTPacMan(), new StarterGhosts(), 200);
+		exec.runGameTimed(new RAPPacMan(), new StarterGhosts(), visual);
+//		exec.runExperimentEachMap(new DTPacMan(), new StarterGhosts(), 200);
 //		exec.runGameTimed(new HumanController(new KeyBoardInput()),new StarterGhosts(),visual);	
 		//*/
 		
