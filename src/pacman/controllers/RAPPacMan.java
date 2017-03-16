@@ -21,6 +21,7 @@ import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.IntSummaryStatistics;
 import java.util.LinkedList;
@@ -61,15 +62,16 @@ public class RAPPacMan extends Controller {
 
   @Override
   public MOVE getMove(Game game, long timeDue) {
-    Rap rap = raps.pop();
+    LinkedList<Rap> craps = new LinkedList<>(raps);
+    Rap rap = craps.pop();
     MOVE output = null;
 
-    while (raps.size() > 0) {
-      output = rap.handleRap(game, raps);
+    while (craps.size() > 0) {
+      output = rap.handleRap(game, craps);
       if (output != null) {
         break;
       }
-      rap = raps.pop();
+      rap = craps.pop();
     }
 
     return output;
